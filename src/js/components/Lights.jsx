@@ -4,14 +4,18 @@ import '../../styles/lights.css'
 const Lights = () => {
 
    const [light, setLight] = useState("red");
+   const [color, setColor] = useState('colorRed');
 
   const changeLight = () => {
     if (light === "red") {
-      setLight("yellow");
+      setLight("yellow")
+      setColor("colorYellow");
     } else if (light === "yellow") {
-      setLight("green");
+      setLight("green")
+      setColor("colorGreen");
     } else {
-      setLight("red");
+      setLight("red")
+      setColor("colorRed");
     }
   };
 
@@ -24,7 +28,7 @@ const Lights = () => {
             <div className={`light yellow ${light === "yellow" ? "on" : "off"}`}></div>
             <div className={`light green ${light === "green" ? "on" : "off"}`}></div>
         </div>
-          <button onClick={changeLight} className='btn btn-primary'>Click to change the light</button>
+          <button onClick={changeLight} className={`color ${color === "colorRed" ? "colorRedOn" : "colorOff"} ${color === "colorYellow" ? "colorYellowOn" : ""} ${color === "colorGreen" ? "colorGreenOn" : ""}`}>Click Me!</button>
        
     </div>
   )
